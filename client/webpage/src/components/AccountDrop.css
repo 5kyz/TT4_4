@@ -1,0 +1,17 @@
+.account-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.account-modal-icon {
+    position: absolute;
+    top: 1%;
+    left: 0;
+    color: var(white);
+    cursor: pointer;
+}
+
+.account-modal li {
+    font-size: 15px;
+}
