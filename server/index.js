@@ -6,6 +6,8 @@ import 'dotenv/config';
 
 import authRoutes from './routes/auth.js'
 import loansRoutes from './routes/loans.js';
+import paymentsRoutes from './routes/payments.js';
+import balanceRoutes from './routes/balance.js';
 
 const app = express();
 
