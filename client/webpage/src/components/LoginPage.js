@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './LoginPage.css';
 import logo from "./assets/logo.jpg";
-//import axios from 'axios';
+import axios from 'axios';
 
 export default function LoginPage (){
   const [password, setPassword] = useState("");
@@ -11,6 +11,8 @@ export default function LoginPage (){
 
   const [allowLogin, setAllowLogin] = useState(false);
   const [failLogin, setfailLogin] = useState(false);
+
+
 
 
   const handlePassword = (e) =>{
@@ -25,13 +27,34 @@ export default function LoginPage (){
     setUserPhone(e.target.value);
   }
 
-  const login = (e) =>{
+  const login = async (e) =>{
     e.preventDefault();
-    if (userPhone.valueOf() == '123' && password.valueOf() == '1234'){
+    const url = 'https://dbs-techtrek.herokuapp.com/user/login'
+    const res = await axios.post(url, {
+        customer_phone: userPhone.valueOf(),
+        password: password.valueOf()
+    });
+
+    if(res.data['status'] == 'success'){
       setAllowLogin(true);
     }else{
       setfailLogin(true);
     }
+    // if (userPhone.valueOf() == '123' && password.valueOf() == '1234'){
+    //   setAllowLogin(true);
+    //   axios({
+    //     method: 'post',
+    //     url: 'https://dbs-techtrek.herokuapp.com/user/signup',
+    //     data: {
+    //       customer_name: userName,
+    //       customer_phone: userPhone,
+    //       customer_address: userAddr,
+    //       password: password
+    //     }
+    //   });
+    // }else{
+    //   setfailLogin(true);
+    // }
     console.log(allowLogin);
   }
 

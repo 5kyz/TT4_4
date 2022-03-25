@@ -28,16 +28,14 @@ export default function SignUpPage() {
   const signup = async (e) =>{
     e.preventDefault();
     if (password.valueOf() == checkpwd.valueOf()){
+      console.log(userName.valueOf());
       setAllowSignUp(true);
-      axios({
-        method: 'post',
-        url: 'https://dbs-techtrek.herokuapp.com/user/signup',
-        data: {
-          customer_name: userName,
-          customer_phone: userPhone,
-          customer_address: userAddr,
-          password: password
-        }
+      const url = 'https://dbs-techtrek.herokuapp.com/user/signup'
+      const res = await axios.post(url, {
+          customer_name: userName.valueOf(),
+          customer_phone: userPhone.valueOf(),
+          customer_address: userAddr.valueOf(),
+          password: password.valueOf()
       });
     }else{
       setfailSignUp(true);
