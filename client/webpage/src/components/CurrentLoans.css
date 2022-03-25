@@ -1,6 +1,6 @@
 .currentloans--container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px;
+    gap: 20px;
+    /* padding: 10px; */
 }
