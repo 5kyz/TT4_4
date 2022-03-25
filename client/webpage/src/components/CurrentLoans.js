@@ -18,7 +18,10 @@ const CurrentLoans = () => {
 
         <div className="currentloans--container">
         <p>Loan ID</p>
-        <p>Loan Amount</p>
+        <p>Total Loan</p>
+        <p>Outstanding Amount</p>
+        <label>Amount to Pay</label>
+        <input type="text"/>
         <button>Pay Loans</button>
         </div>
 
