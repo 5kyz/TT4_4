@@ -1,5 +1,5 @@
 import React from 'react'
-// import "./CurrentLoans.css"
+import "./CurrentLoans.css"
 
 const CurrentLoans = () => {
 
@@ -10,11 +10,14 @@ const CurrentLoans = () => {
         </div>
 
         <div className="currentloans--container">
-        
         <p>Loan ID</p>
         <p>Loan Amount</p>
-        <p>Pay Loans</p>
+        <button>Pay Loans</button>
+        </div>
 
+        <div className="applyloan">
+            <input type="text" />
+            <button>Apply Loan</button>
         </div>
     </section>
   )
