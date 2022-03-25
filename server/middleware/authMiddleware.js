@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import { Customer } from '../models/loans.js';
 
-const authenticateToken = (req, res, next) => {
+export const authenticateToken = (req, res, next) => {
     try {
         const cookies = req.cookies
         const token = cookies.token && cookies.token.split(' ')[1]
@@ -16,7 +16,7 @@ const authenticateToken = (req, res, next) => {
             status: 'fail',
             message: 'Missing refresh token.',
         })
-
+        
         jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, async (err, user) => {
             if (err) {
                 const userPayload = await verifyRefreshToken(refreshToken)

@@ -2,6 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
 import 'dotenv/config';
 
 import authRoutes from './routes/auth.js'
@@ -12,6 +13,7 @@ import authenticateToken from './middleware/authMiddleware.js';
 
 const app = express();
 
+app.use(cookieParser())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
@@ -25,8 +27,6 @@ app.use('/payment', paymentsRoutes);
 app.get('/', (req, res) => {
     res.send('Hello to test API');
 })
-
-
 
 const CONNECTION_URL = process.env.ATLAS_URI;
 const PORT = process.env.PORT || 4000;
