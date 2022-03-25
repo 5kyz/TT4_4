@@ -1,7 +1,14 @@
-import React from "react";
+import React, {useState, useEffect} from 'react';
+import '../../App.css';
+import LoginPage from '../LoginPage';
 
 function Login() {
-  return <div> Login/signup PAGE</div>;
+  return (
+      <>
+        <LoginPage />
+      </>
+    );
+
 }
 
 export default Login;

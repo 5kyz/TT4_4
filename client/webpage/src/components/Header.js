@@ -22,6 +22,10 @@ const Header = () => {
         <MenuIcon className="menu" onClick={toggle} />
       </div>
 
+      <div>
+        <h1>Welcome, Customer ID</h1>
+      </div>
+
       <nav>
         <ul className={active ? "list--items active" : "list--items"}>
           <div className="menu--close">
@@ -29,7 +33,7 @@ const Header = () => {
           </div>
 
           <li>
-            <Link to="/"> Home</Link>
+            <Link to="/home"> Home</Link>
           </li>
 
           <li>
@@ -40,9 +44,6 @@ const Header = () => {
             <Link to="/loans"> Loans</Link>
           </li>
 
-          <li>
-            <Link to="/login"> Login</Link>
-          </li>
         </ul>
       </nav>
     </div>

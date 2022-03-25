@@ -1,4 +1,5 @@
 import React from 'react'
+import "./LoanHistory.css"
 
 const LoanHistory = () => {
     return (
@@ -10,7 +11,9 @@ const LoanHistory = () => {
             <div className="loanhistory--container">
             
             <p>Loan ID</p>
-            <p>Loan Amount</p>
+            <p>Payment ID</p>
+            <p>Payment Date</p>
+            <p>Payment Amount</p>
     
             </div>
         </section>
