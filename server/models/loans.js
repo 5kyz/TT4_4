@@ -39,9 +39,7 @@ const PaymentSchema = mongoose.Schema({
     },
 });
 
-const Customer = mongoose.model('Customer', customerSchema);
-const CustomerLoan = mongoose.model('CustomerLoan', customerLoanSchema);
-const Loan = mongoose.model('Loan', loanSchema);
-const Payment = mongoose.model('Payment', PaymentSchema);
-
-module.exports = { Customer, CustomerLoan, Loan, Payment }
+export const Customer = mongoose.model('Customer', customerSchema);
+export const CustomerLoan = mongoose.model('CustomerLoan', customerLoanSchema);
+export const Loan = mongoose.model('Loan', loanSchema);
+export const Payment = mongoose.model('Payment', PaymentSchema);
