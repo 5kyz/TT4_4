@@ -56,6 +56,7 @@ export default function LoginPage (){
               </div>
               <Link to="/SignUp" className='sign-btn'>Click here to SignUp!</Link>
               <p>{allowLogin}</p>
+              
               {allowLogin ? (<Link to="/home"></Link>): (<p>Unsuccessful Login</p>)}
 
             </form>
