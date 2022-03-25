@@ -44,9 +44,6 @@ const Header = () => {
             <Link to="/loans"> Loans</Link>
           </li>
 
-          <li>
-            <Link to="/login"> Login</Link>
-          </li>
         </ul>
       </nav>
     </div>
