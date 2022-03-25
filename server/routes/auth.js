@@ -1,6 +1,10 @@
-const bcrypt = require('bcrypt')
-const express = require('express')
-const jwt = require('jsonwebtoken')
-const router = express.Router()
+import express from 'express';
 
-const { Customer } = require('../models')
+import { createAccount, loginAccount } from '../controllers/auth.js';
+
+const router = express.Router();
+
+router.post('/create_account/', createAccount);
+router.post('/login/', loginAccount);
+
+export default router;
