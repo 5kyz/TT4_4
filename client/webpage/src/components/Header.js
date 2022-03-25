@@ -32,6 +32,10 @@ const Header = () => {
           </li>
 
           <li>
+            <h1>Account</h1>
+          </li>
+
+          <li>
             <h1>Loans</h1>
           </li>
 
