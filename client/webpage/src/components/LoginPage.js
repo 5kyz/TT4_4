@@ -10,6 +10,7 @@ export default function LoginPage (){
   const [userPhone, setUserPhone] = useState("");
 
   const [allowLogin, setAllowLogin] = useState(false);
+  const [failLogin, setfailLogin] = useState(false);
 
   const handlePassword = (e) =>{
     e.preventDefault();
@@ -27,6 +28,8 @@ export default function LoginPage (){
     e.preventDefault();
     if (userPhone.valueOf() == '123' && password.valueOf() == '1234'){
       setAllowLogin(true);
+    }else{
+      setfailLogin(true);
     }
     console.log(allowLogin);
   }
@@ -53,14 +56,18 @@ export default function LoginPage (){
               <div>
                 <button className='log-btn'>Login</button>
               </div>
+              <div className='go-links'>
               <Link to="/SignUp" className='sign-btn'>Click here to SignUp!</Link>
 
+              {failLogin ? (<p>Unsuccessful Login</p>):null}
+
               {allowLogin ? (<Link to='/home'>
-                              <button >test</button>
-                              </Link>): (<p>Unsuccessful Login</p>)}
+                              <p> Login Successful!</p>
+                              <button className='go-home'>Go to Home</button>
+                              </Link>): failLogin}
+              </div>
 
             </form>
-            <p>{allowLogin}</p>
           </div>
       </div>
     </>
