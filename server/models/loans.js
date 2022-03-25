@@ -43,3 +43,5 @@ const Customer = mongoose.model('Customer', customerSchema);
 const CustomerLoan = mongoose.model('CustomerLoan', customerLoanSchema);
 const Loan = mongoose.model('Loan', loanSchema);
 const Payment = mongoose.model('Payment', PaymentSchema);
+
+module.exports = { Customer, CustomerLoan, Loan, Payment }
