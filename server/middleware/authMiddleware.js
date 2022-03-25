@@ -66,4 +66,4 @@ const verifyRefreshToken = (refreshToken) => new Promise((resolve) => {
     })
 })
 
-module.exports = authenticateToken
+export default authenticateToken
