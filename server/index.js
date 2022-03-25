@@ -4,15 +4,20 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import 'dotenv/config';
 
+import loansRoutes from './routes/loans.js';
+
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
+app.use('/loans', loansRoutes);
+
 app.get('/', (req, res) => {
     res.send('Hello to test API');
 })
+
 
 const CONNECTION_URL = process.env.ATLAS_URI;
 const PORT = process.env.PORT || 4000;
