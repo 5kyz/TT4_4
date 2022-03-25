@@ -5,6 +5,17 @@ import { Link } from "react-router-dom";
 import Header from "./Header";
 
 const AccountDrop = () => {
+
+  // const fetchData = async () =>{
+  //   e.preventDefault();
+  //   const url = 'https://dbs-techtrek.herokuapp.com/user/login'
+  //   const res = await axios.post(url, {
+  //       customer_phone: userPhone.valueOf(),
+  //       password: password.valueOf()
+  //   });
+  //
+  // }
+
   return (
     <div className="account-modal">
         <Header/>
