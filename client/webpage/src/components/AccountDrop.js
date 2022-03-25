@@ -2,13 +2,13 @@ import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
 //import "../Modal.css";
 import { Link } from "react-router-dom";
+import Header from "./Header";
 
 const AccountDrop = () => {
   return (
     <div className="account-modal">
-      <div>
-        <CloseIcon className="account-modal-icon" />
-      </div>
+        <Header/>
+
       <section className="accountbalance">
         <div className="accountbalance--content">
           <h1>ACCOUNT DETAILS</h1>

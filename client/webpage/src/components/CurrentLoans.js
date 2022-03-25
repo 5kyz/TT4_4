@@ -2,13 +2,12 @@ import React from "react";
 import "./CurrentLoans.css";
 import CloseIcon from "@mui/icons-material/Close";
 import { Link } from "react-router-dom";
+import Header from "./Header";
 
 const CurrentLoans = () => {
   return (
     <div>
-      <div>
-      <Link to="/home"><CloseIcon className="account-modal-icon" /></Link>
-      </div>
+        <Header/>
 
       <section className="currentloans">
         <div className="currentloans--content">
