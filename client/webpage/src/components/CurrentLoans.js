@@ -7,7 +7,7 @@ const CurrentLoans = () => {
   return (
     <div>
       <div>
-        <CloseIcon className="account-modal-icon" />
+      <Link to="/home"><CloseIcon className="account-modal-icon" /></Link>
       </div>
 
       <section className="currentloans">
@@ -17,11 +17,14 @@ const CurrentLoans = () => {
 
         <div className="currentloans--container">
           <p>Loan ID</p>
-          <p>Loan Amount</p>
+          <p>Total Loan Amount</p>
+          <p>Outstanding Amount</p>
+          <input type="text"/>
           <button>Pay Loans</button>
         </div>
 
         <div className="applyloan">
+        <label>Amount to Loan</label>
           <input type="text" />
           <button>Apply Loan</button>
         </div>
