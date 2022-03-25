@@ -108,7 +108,11 @@ export const login = async (req, res) => {
                 status: 'success',
                 data: {
                     customer_id: customer._id,
-                    token: 'Bearer ' + accessToken
+                    token: 'Bearer ' + accessToken,
+                    customer_name: customer.customer_name,
+                    customer_phone: customer.customer_phone,
+                    customer_address: customer.customer_address,
+                    balance: customer.balance
                 },
             }) 
         } else {
