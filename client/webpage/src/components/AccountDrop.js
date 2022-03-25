@@ -15,19 +15,23 @@ const AccountDrop = () => {
         </div>
 
         <div className="balance--container">
-          <p>Name</p>
-          <p>Phone Number</p>
-          <p>Address</p>
-          <p>Current Loans</p>
-          <button>Pay Loans</button>
-          <p>Make Payments</p>
+          <p>ID:</p>
+          <p>Name:</p>
+          <p>Phone Number:</p>
+          <p>Address:</p>
         </div>
+        <h1>Account Balance</h1>
         <li>
           <Link to="/account"> View Balance</Link>
         </li>
+        <p>Current Balance</p>
 
         <li>
           <Link to="/account"> Deposit</Link>
+        </li>
+        <h1>Current Loans</h1>
+        <li>
+          <Link to="/account">Make Payments</Link>
         </li>
       </section>
     </div>
