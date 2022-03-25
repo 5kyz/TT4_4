@@ -25,12 +25,11 @@ export default function LoginPage (){
 
   const login = (e) =>{
     e.preventDefault();
-    if (userPhone == '123' && password == '1234'){
-      setAllowLogin(!allowLogin);
-      console.log(allowLogin);
+    if (userPhone.valueOf() == '123' && password.valueOf() == '1234'){
+      setAllowLogin(true);
     }
+    console.log(allowLogin);
   }
-
 
   return(
     <>
@@ -54,12 +53,14 @@ export default function LoginPage (){
               <div>
                 <button className='log-btn'>Login</button>
               </div>
-            </form>
-            <Link to="/SignUp" className='sign-btn'>Click here to SignUp!</Link>
-              <p>{allowLogin}</p>
-              
-              {allowLogin ? (<Link to="/home"></Link>): (<p>Unsuccessful Login</p>)}
+              <Link to="/SignUp" className='sign-btn'>Click here to SignUp!</Link>
 
+              {allowLogin ? (<Link to='/home'>
+                              <button >test</button>
+                              </Link>): (<p>Unsuccessful Login</p>)}
+
+            </form>
+            <p>{allowLogin}</p>
           </div>
       </div>
     </>
