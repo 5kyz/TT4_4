@@ -1,13 +1,14 @@
 import React from 'react'
 import "./CurrentLoans.css"
 import CloseIcon from "@mui/icons-material/Close";
+import { Link } from "react-router-dom";
 
 const CurrentLoans = () => {
 
   return (
     <div>
     <div>
-    <CloseIcon className='account-modal-icon' />
+    <Link to="/home"><CloseIcon className='account-modal-icon' /></Link>
     </div>
 
     <section className='currentloans'>
