@@ -1,7 +1,12 @@
 import React from "react";
+import AccountDrop from "../AccountDrop";
 
 function Account() {
-  return <div> Account PAGE</div>;
+  return (
+    <div classname="accountpage">
+      <AccountDrop />
+    </div>
+  );
 }
 
 export default Account;
