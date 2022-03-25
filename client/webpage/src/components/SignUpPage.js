@@ -12,6 +12,7 @@ export default function SignUpPage (){
   const [allowSignUp, setAllowSignUp] = useState(false);
 
   function signup(){
+    setAllowSignUp(true);
 
   }
   return(
@@ -50,9 +51,8 @@ export default function SignUpPage (){
                 <div>
                   <button type="submit" onClick={signup}>SignUp</button>
                 </div>
+                {allowSignUp ? (<Link to='/home'></Link>):(<p>Unsuccessful SignUp</p>)}
               </div>
-
-              {allowSignUp ? (<p>Welcome! SignUp Successful</p>) : (<p>Sorry password mismatch please try again.</p>)}
 
             </form>
           </div>

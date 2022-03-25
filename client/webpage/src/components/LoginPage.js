@@ -1,17 +1,21 @@
 import React, {useState, useEffect, Component, useRef} from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './LoginPage.css';
 //import axios from 'axios';
 
-export default function LoginPage (){
+export default function LoginPage ({setToken}){
   const [password, setPassword] = useState();
   const [userPhone, setUserPhone] = useState();
 
   const [allowLogin, setAllowLogin] = useState(false);
 
-  function handleclick(){
-    setAllowLogin(true)
-
+  const handleclick = (e) =>{
+    const userphone = setUserPhone(e.target.value)
+    const userpwd = setPassword(e.target.value)
+    if (userpwd == '123' && userphone == '1234'){
+      setAllowLogin(true);
+    }
   }
   return(
     <>
@@ -26,22 +30,26 @@ export default function LoginPage (){
             <form className='log-form'>
               <label>
                 <p>Phone Number</p>
-                <input type='text' onChange={e=>setUserPhone(e.target.value)}/>
+                <input type='text' onChange={handleclick}/>
               </label>
               <label>
                 <p>Password</p>
-                <input type="password" onChange={e=>setPassword(e.target.value)}/>
+                <input type="password" onChange={handleclick}/>
               </label>
               <div>
                 <button className='log-btn' onClick={handleclick}>Login</button>
               </div>
               <Link to="/SignUp" className='sign-btn'>Click here to SignUp!</Link>
-
-              {allowLogin ? (<p>Welcome! Login Successful</p>) : (<p>Sorry please try again.</p>)}
+              <p>{allowLogin}</p>
+              {allowLogin ? (<Link to="/home"></Link>): (<p>Unsuccessful Login</p>)}
 
             </form>
           </div>
       </div>
     </>
   )
+}
+
+Login.propTypes = {
+  setToken: PropTypes.func.isRequired
 }
