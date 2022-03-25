@@ -1,28 +1,10 @@
 import { Customer, CustomerLoan, Loan, Payment } from "../models/loans.js";
 import mongoose from "mongoose";
 
-// export const getAccountDetails = async (req, res) => {
-//     try {
-//         // res.send('api working')
-//         // can get customer id by using auth token ???
-//         const customer = await Customer.findById(req.user.id);
-//         // just display partial cusomter details, don't want token and password
-//         const cusomter_details = {
-//             "customer_name": customer.name,
-//             "customer_phone": customer.phone,
-//             "customer_address": customer.address
-//         }
-//         res.status(200).json(cusomter_details);
-//     }
-//     catch (err) {
-//         res.status(404).json({ message: err.message });
-//     }
-// }
-
 export const getLoans = async (req, res) => {
+    const customer_id = req.user.id
     try {
-        // can get customer id by using auth token ???
-        const loans = await CustomerLoan.find({ 'customer_id': req.user.id });
+        const loans = await CustomerLoan.find({ 'customer_id': customer_id });
         res.status(200).json(loans);
     }
     catch (err) {
@@ -31,10 +13,10 @@ export const getLoans = async (req, res) => {
 }
 
 export const getLoanById = async (req, res) => {
+    const loan_id = req.params.id
     try {
-        // can get customer id by using auth token ???
-        // const loans = await CustomerLoan.find({ 'customer_id': req.user.id });
-        // res.status(200).json(loans);
+        const loan = await Loan.findById(loan_id)
+        res.status(200).json(loan);
     }
     catch (err) {
         res.status(404).json({ message: err.message });
@@ -42,13 +24,24 @@ export const getLoanById = async (req, res) => {
 }
 
 export const createLoan = async (req, res) => {
+    const customer_id = req.user.id
+    const loan_amount = parseFloat(req.body.loan_amount);
+    const newLoan = new Loan({ "loan_amount": loan_amount })
+    console.log(newLoan)
     try {
-        // can get customer id by using auth token ???
-        // const loans = await CustomerLoan.find({ 'customer_id': req.user.id });
-        // res.status(200).json(loans);
+        await newLoan.save();
+        const loan_id = newLoan._id;
+        const newCustomerLoan = new CustomerLoan({ "customer_id": customer_id, "loan_id": loan_id })
+        try {
+            await newCustomerLoan.save();
+            res.status(201).json(newCustomerLoan);
+        }
+        catch (err) {
+            res.status(409).json({ message: err });
+        }
     }
     catch (err) {
-        res.status(404).json({ message: err.message });
+        res.status(404).json({ message: err });
     }
 }
 
