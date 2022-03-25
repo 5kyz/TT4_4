@@ -1,15 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import '../../App.css';
-import LoginPage from '../LoginPage';
+import SignUpPage from '../SignUpPage';
 
-
-function Login() {
+function SignUp() {
   return (
       <>
-        <LoginPage />
+        <SignUpPage />
       </>
     );
 
 }
 
-export default Login;
+export default SignUp;

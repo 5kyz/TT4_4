@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Header.css";
+import { Link } from "react-router-dom";
 import logo from "./assets/logo.jpg";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
@@ -21,6 +22,10 @@ const Header = () => {
         <MenuIcon className="menu" onClick={toggle} />
       </div>
 
+      <div>
+        <h1>Welcome, Customer ID</h1>
+      </div>
+
       <nav>
         <ul className={active ? "list--items active" : "list--items"}>
           <div className="menu--close">
@@ -28,15 +33,15 @@ const Header = () => {
           </div>
 
           <li>
-            <h1>Home</h1>
+            <Link to="/home"> Home</Link>
           </li>
 
           <li>
-            <h1>Loans</h1>
+            <Link to="/account"> Account</Link>
           </li>
 
           <li>
-            <h1>Login/SignUp</h1>
+            <Link to="/loans"> Loans</Link>
           </li>
 
         </ul>
