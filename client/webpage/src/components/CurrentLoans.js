@@ -3,8 +3,10 @@ import "./CurrentLoans.css";
 import CloseIcon from "@mui/icons-material/Close";
 import { Link } from "react-router-dom";
 import Header from "./Header";
+import axios from 'axios';
 
 const CurrentLoans = () => {
+
   return (
     <div>
         <Header/>

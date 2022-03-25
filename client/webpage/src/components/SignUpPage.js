@@ -2,13 +2,14 @@ import React, { useState, useEffect, Component, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./SignUpPage.css";
 import logo from "./assets/logo.jpg";
+import axios from 'axios';
 
 export default function SignUpPage() {
-  const [userName, setUserName] = useState();
-  const [password, setPassword] = useState();
-  const [checkpwd, setCheckPwd] = useState();
-  const [userAddr, setUserAddr] = useState();
-  const [userPhone, setUserPhone] = useState();
+  const [userName, setUserName] = useState('');
+  const [password, setPassword] = useState('');
+  const [checkpwd, setCheckPwd] = useState('');
+  const [userAddr, setUserAddr] = useState('');
+  const [userPhone, setUserPhone] = useState('');
 
   const [allowSignUp, setAllowSignUp] = useState(false);
   const [failSignUp, setfailSignUp] = useState(false);
@@ -24,10 +25,20 @@ export default function SignUpPage() {
     setCheckPwd(e.target.value);
   }
 
-  const signup = (e) =>{
+  const signup = async (e) =>{
     e.preventDefault();
     if (password.valueOf() == checkpwd.valueOf()){
       setAllowSignUp(true);
+      axios({
+        method: 'post',
+        url: 'https://dbs-techtrek.herokuapp.com/user/signup',
+        data: {
+          customer_name: userName,
+          customer_phone: userPhone,
+          customer_address: userAddr,
+          password: password
+        }
+      });
     }else{
       setfailSignUp(true);
     }

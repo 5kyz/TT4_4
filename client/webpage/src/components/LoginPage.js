@@ -12,6 +12,7 @@ export default function LoginPage (){
   const [allowLogin, setAllowLogin] = useState(false);
   const [failLogin, setfailLogin] = useState(false);
 
+
   const handlePassword = (e) =>{
     e.preventDefault();
     setPassword(e.target.value);
