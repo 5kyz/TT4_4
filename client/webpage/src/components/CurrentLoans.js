@@ -22,6 +22,7 @@ const CurrentLoans = () => {
         </div>
 
         <div className="applyloan">
+            <label>Loan Amount</label>
             <input type="text" />
             <button>Apply Loan</button>
         </div>

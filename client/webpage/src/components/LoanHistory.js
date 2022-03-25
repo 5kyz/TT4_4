@@ -1,4 +1,5 @@
 import React from 'react'
+import "./LoanHistory.css"
 
 const LoanHistory = () => {
     return (
