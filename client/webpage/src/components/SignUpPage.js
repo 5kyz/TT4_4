@@ -50,10 +50,6 @@ export default function SignUpPage (){
                 <div>
                   <button type="submit" onClick={signup}>SignUp</button>
                 </div>
-                <div>
-                  <Link to='/Login' className='log-btn'>Click here to login</Link>
-                  {/*<button className='log-btn' onClick={handleclick}> Click here to Login </button>*/}
-                </div>
               </div>
 
               {allowSignUp ? (<p>Welcome! SignUp Successful</p>) : (<p>Sorry password mismatch please try again.</p>)}

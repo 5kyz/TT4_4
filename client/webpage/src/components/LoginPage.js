@@ -1,5 +1,5 @@
 import React, {useState, useEffect, Component, useRef} from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './LoginPage.css';
 //import axios from 'axios';
 
@@ -35,6 +35,7 @@ export default function LoginPage (){
               <div>
                 <button className='log-btn' onClick={handleclick}>Login</button>
               </div>
+              <Link to="/SignUp" className='sign-btn'>Click here to SignUp!</Link>
 
               {allowLogin ? (<p>Welcome! Login Successful</p>) : (<p>Sorry please try again.</p>)}
 
