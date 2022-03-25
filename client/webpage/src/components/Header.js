@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Header.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import logo from "./assets/logo.jpg";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
@@ -28,21 +29,20 @@ const Header = () => {
           </div>
 
           <li>
-            <h1>Home</h1>
+            <Link to="/"> Home</Link>
           </li>
 
           <li>
-            <h1>Account</h1>
+            <Link to="/account"> Account</Link>
           </li>
 
           <li>
-            <h1>Loans</h1>
+            <Link to="/loans"> Loans</Link>
           </li>
 
           <li>
-            <h1>Login/SignUp</h1>
+            <Link to="/login"> Login</Link>
           </li>
-
         </ul>
       </nav>
     </div>
