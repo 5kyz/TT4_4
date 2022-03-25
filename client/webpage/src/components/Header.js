@@ -22,6 +22,10 @@ const Header = () => {
         <MenuIcon className="menu" onClick={toggle} />
       </div>
 
+      <div>
+        <h1>Welcome, Customer ID</h1>
+      </div>
+
       <nav>
         <ul className={active ? "list--items active" : "list--items"}>
           <div className="menu--close">
