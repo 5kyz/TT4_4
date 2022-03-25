@@ -1,0 +1,9 @@
+.c-loan-section {
+    background: linear-gradient(var(rgba(0, 0, 0, 0.543),rgba(0, 0, 0, 0.502)));
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: sticky;
+    top: 0;
+}
