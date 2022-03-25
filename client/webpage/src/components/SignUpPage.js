@@ -11,10 +11,28 @@ export default function SignUpPage() {
   const [userPhone, setUserPhone] = useState();
 
   const [allowSignUp, setAllowSignUp] = useState(false);
+  const [failSignUp, setfailSignUp] = useState(false);
 
-  function signup() {
-    setAllowSignUp(true);
+
+  const handlePwd = (e) =>{
+    e.preventDefault();
+    setPassword(e.target.value);
   }
+
+  const handlecpwd = (e) =>{
+    e.preventDefault();
+    setCheckPwd(e.target.value);
+  }
+
+  const signup = (e) =>{
+    e.preventDefault();
+    if (password.valueOf() == checkpwd.valueOf()){
+      setAllowSignUp(true);
+    }else{
+      setfailSignUp(true);
+    }
+  }
+
   return (
     <>
       <div className="outer">
@@ -50,14 +68,14 @@ export default function SignUpPage() {
               <p>Password</p>
               <input
                 type="password"
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={handlePwd}
               />
             </label>
             <label>
               <p>Re-Enter Password</p>
               <input
                 type="password"
-                onChange={(e) => setCheckPwd(e.target.value)}
+                onChange={handlecpwd}
               />
             </label>
 
@@ -66,6 +84,14 @@ export default function SignUpPage() {
                 <button type="submit" onClick={signup}>
                   SignUp
                 </button>
+
+                {failSignUp ? (<p>Unsuccessful SignUp</p>):null}
+
+                {allowSignUp ? (<div>
+                                <p> Sign Up Successful! </p>
+                                <Link to="/" className='sign-btn'>Back to Login</Link>
+                                </div>
+                              ): failSignUp}
               </div>
               {/* {allowSignUp ? (<Link to='/home'></Link>):(<p>Unsuccessful SignUp</p>)} */}
             </div>
