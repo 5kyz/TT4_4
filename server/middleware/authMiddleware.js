@@ -1,5 +1,5 @@
-const jwt = require('jsonwebtoken')
-const { Customer } = require('../models/loans')
+import jwt from 'jsonwebtoken';
+import { Customer } from '../models/loans.js';
 
 const authenticateToken = (req, res, next) => {
     try {
@@ -30,7 +30,7 @@ const authenticateToken = (req, res, next) => {
                 res.cookie('token', 'Bearer ' + authTokenNew, { httpOnly: true })
             } else {
                 req.user = user
-            }            
+            }
             next()
         })
     } catch (err) {
