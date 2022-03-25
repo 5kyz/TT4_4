@@ -4,8 +4,9 @@ const customerSchema = mongoose.Schema({
     customer_name: { type: String, required: true },
     customer_phone: { type: String, unique: true, required: true },
     customer_address: { type: String, required: true },
-    pasword: { type: String, required: true },
+    password: { type: String, required: true },
     balance: { type: Number, default: 0 },
+    token: { type: String },
     createdAt: {
         type: Date,
         default: new Date()
